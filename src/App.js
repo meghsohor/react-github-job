@@ -43,7 +43,7 @@ function App() {
 
       {jobs.length > 0 && <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />}
 
-      {!loading && !error && 
+      {!loading && !error && jobs &&
         jobs.map((job) => {
           return (
             <Job key={job.id} job={job} />
@@ -51,7 +51,7 @@ function App() {
         })
       }
 
-      {jobs.length > 0 && <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />}
+      {jobs && jobs.length > 0 && <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />}
     </Container>
   );
 }
